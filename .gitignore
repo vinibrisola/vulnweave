@@ -1,0 +1,46 @@
+# Secrets
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+secrets.*
+credentials.*
+
+# Node / VS Code
+node_modules/
+dist/
+out/
+coverage/
+*.vsix
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IntelliJ / Gradle
+.idea/
+.gradle/
+build/
+*.iml
+*.ipr
+*.iws
+
+# Local VulnWeave data
+.vulnweave/
+.vulnweave-cache/
+.cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temp
+*.tmp
+*.swp
+*.bak
