@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  core-and-vscode:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23.x'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+      - name: Go test
+        working-directory: core
+        run: go test ./...
+      - name: Go vet
+        working-directory: core
+        run: go vet ./...
+      - name: VS Code syntax
+        run: node --check vscode-extension/extension.js
+      - name: VS Code UI regression checks
+        working-directory: vscode-extension
+        run: node ui-test.js
+      - name: Validate package metadata
+        run: node -e "JSON.parse(require('fs').readFileSync('vscode-extension/package.json','utf8'))"

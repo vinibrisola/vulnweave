@@ -1,0 +1,147 @@
+{
+  "name": "vulnweave-dependency-intelligence",
+  "displayName": "VulnWeave Dependency Intelligence",
+  "description": "Evidence-first dependency security intelligence and guarded remediation for Maven and Node/Angular with artifact inventory, scanner reconciliation and fail-safe gates.",
+  "version": "0.12.5",
+  "publisher": "vulnweave",
+  "license": "UNLICENSED",
+  "engines": {
+    "vscode": ">=1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [
+    "onCommand:vulnweave.scan",
+    "onCommand:vulnweave.openDashboard",
+    "onCommand:vulnweave.selectProject",
+    "onCommand:vulnweave.configureAI",
+    "onCommand:vulnweave.configureVeracode",
+    "onCommand:vulnweave.configureAmazonQ",
+    "onCommand:vulnweave.diagnoseInstallation",
+    "onCommand:vulnweave.diagnoseEnvironment",
+    "onCommand:vulnweave.reopenFresh",
+    "onCommand:vulnweave.prepareTools",
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "vulnweave.scan",
+        "title": "VulnWeave: Executar análise completa"
+      },
+      {
+        "command": "vulnweave.openDashboard",
+        "title": "VulnWeave: Abrir painel"
+      },
+      {
+        "command": "vulnweave.selectProject",
+        "title": "VulnWeave: Selecionar projeto"
+      },
+      {
+        "command": "vulnweave.configureAI",
+        "title": "VulnWeave: Configurar IA"
+      },
+      {
+        "command": "vulnweave.configureVeracode",
+        "title": "VulnWeave: Configurar integração com Veracode"
+      },
+      {
+        "command": "vulnweave.configureAmazonQ",
+        "title": "VulnWeave: Configurar Amazon Q Developer"
+      },
+      {
+        "command": "vulnweave.diagnoseInstallation",
+        "title": "VulnWeave: Diagnóstico da instalação"
+      },
+      {
+        "command": "vulnweave.diagnoseEnvironment",
+        "title": "VulnWeave: Diagnóstico do ambiente de validação"
+      },
+      {
+        "command": "vulnweave.prepareTools",
+        "title": "VulnWeave: Preparar scanners locais"
+      },
+      {
+        "command": "vulnweave.reopenFresh",
+        "title": "VulnWeave: Reabrir interface 0.12.5"
+      }
+    ],
+    "configuration": {
+      "title": "VulnWeave",
+      "properties": {
+        "vulnweave.ai.anthropicModel": {
+          "type": "string",
+          "default": "",
+          "description": "Model ID do Anthropic Direct. Deixe vazio e informe durante a configuração."
+        },
+        "vulnweave.remediation.runBuild": {
+          "type": "boolean",
+          "default": true,
+          "description": "Executa build na cópia isolada antes de liberar aplicação da correção."
+        },
+        "vulnweave.remediation.runTests": {
+          "type": "boolean",
+          "default": true,
+          "description": "Executa testes na cópia isolada antes de liberar aplicação da correção."
+        },
+        "vulnweave.privateNpmScopes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "Scopes npm privados que não devem ser enviados a fontes públicas."
+        },
+        "vulnweave.privateMavenPrefixes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "Prefixes Maven privados que não devem ser enviados a fontes públicas."
+        },
+        "vulnweave.tools.autoProvision": {
+          "type": "boolean",
+          "default": true,
+          "description": "Baixa automaticamente versões fixadas e verificadas por SHA-256 do OSV-Scanner e Trivy quando não estiverem disponíveis. A análise principal continua funcionando com o core interno se o provisionamento falhar."
+        },
+        "vulnweave.runtime.extraPaths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "Diretórios adicionais para localizar runtimes/package managers usados pelo projeto (Node, Maven, Java etc.). Não altera o PATH global do sistema."
+        },
+        "vulnweave.runtime.commandOverrides": {
+          "type": "object",
+          "default": {},
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Overrides explícitos por comando, por exemplo {\"npm\":\"C:\\\\Program Files\\\\nodejs\\\\npm.cmd\",\"java\":\"C:\\\\Java\\\\bin\\\\java.exe\"}. Use apenas quando a descoberta automática não localizar o toolchain real do projeto."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "test": "node ui-test.js"
+  },
+  "keywords": [
+    "application-security",
+    "sca",
+    "dependencies",
+    "devsecops",
+    "vulnerability",
+    "maven",
+    "npm"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": false,
+      "description": "VulnWeave resolve dependências e, no fluxo de remediação, pode executar package managers, build e testes em cópia isolada. Use apenas em workspaces confiáveis."
+    }
+  }
+}

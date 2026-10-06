@@ -1,0 +1,25 @@
+VulnWeave Source-Available Proprietary License
+Version 1.1 — 2026
+
+Copyright (c) 2026 VulnWeave contributors. All rights reserved.
+
+This repository is source-available for review, evaluation, security analysis,
+and authorized internal use. Publication of the source code does not place the
+software in the public domain and does not grant an open-source license.
+
+Without prior written permission from the copyright holder, you may not:
+- redistribute the software or source code as another product;
+- sublicense, sell, rent, or commercialize copies;
+- remove copyright or ownership notices;
+- use the VulnWeave name or branding to imply endorsement;
+- publish modified binaries as official VulnWeave releases.
+
+You may clone the repository, inspect the code, build it for evaluation, and
+modify a local copy when you are authorized to do so by your organization.
+Third-party components remain subject to their own licenses.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. SECURITY ANALYSIS AND
+REMEDIATION RECOMMENDATIONS MAY BE INCOMPLETE OR INCORRECT AND DO NOT REPLACE
+ENGINEERING REVIEW, TESTING, OR ORGANIZATIONAL SECURITY POLICY.

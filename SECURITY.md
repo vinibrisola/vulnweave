@@ -1,26 +1,34 @@
 # Security Policy
 
-## Reporting vulnerabilities
+## Reporting security issues
 
-Do not disclose security vulnerabilities, API keys, credentials, customer data, or sensitive integration details through public GitHub Issues.
+Do not publish exploitable vulnerabilities, credentials, customer data or sensitive integration details in a public GitHub issue. Use a private, authorized communication channel with the maintainer.
 
-Report security concerns directly to the project maintainers through an approved private channel.
+## Secrets
 
-## Secret handling
+Never commit:
 
-The repository must not contain:
+- Veracode client IDs/secrets or API credentials;
+- AI provider API keys;
+- GitHub/CI tokens;
+- passwords;
+- private keys/certificates;
+- `.env` files containing real values;
+- customer identifiers, internal URLs or confidential reports.
 
-- Veracode API credentials
-- AI provider API keys
-- GitHub or CI/CD tokens
-- passwords
-- private keys or certificates
-- production URLs containing credentials
-- .env files with real values
-- customer or internal infrastructure data
+Runtime integrations should use the IDE secret stores or an approved enterprise secret-management mechanism.
 
-Use environment variables, IDE secure storage, GitHub Secrets, or enterprise secret-management mechanisms.
+## Trust boundaries
 
-## Dependency security
+Dependency names, versions, advisories, build logs and manifest content are treated as untrusted data. AI prompts must not interpret embedded package/advisory text as instructions. Generated remediation must still pass deterministic technical gates.
 
-Dependencies should be reviewed and scanned before release. Security fixes should be validated through build/test and a new vulnerability scan before publication.
+## Public-repository release gate
+
+Before publishing a binary release:
+
+1. run secret scanning over source and packaged artifacts;
+2. search binaries/docs for customer names and project-specific paths;
+3. verify source/binary version alignment;
+4. run tests and package validation;
+5. generate SHA-256 checksums;
+6. review third-party notices and data-flow documentation.

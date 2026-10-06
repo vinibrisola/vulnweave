@@ -1,0 +1,16 @@
+<idea-plugin>
+  <id>com.vulnweave.dependencyintelligence</id>
+  <name>VulnWeave Dependency Intelligence</name>
+  <version>0.12.4</version>
+  <vendor>VulnWeave</vendor>
+  <description><![CDATA[
+    Evidence-first dependency security intelligence and guarded remediation for Maven and Node/Angular.
+    Uses a shared native engine for graph + artifact discovery, scanner reconciliation, candidate validation, safe remediation planning,
+    isolated build/test/rescan validation, and developer-confirmed application.
+  ]]></description>
+  <idea-version since-build="251"/>
+  <depends>com.intellij.modules.platform</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <toolWindow id="VulnWeave" anchor="right" factoryClass="com.vulnweave.VulnWeaveToolWindowFactory"/>
+  </extensions>
+</idea-plugin>

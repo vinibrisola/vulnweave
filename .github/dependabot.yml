@@ -1,0 +1,10 @@
+version: 2
+updates:
+  - package-ecosystem: "gomod"
+    directory: "/core"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "gradle"
+    directory: "/intellij-plugin"
+    schedule:
+      interval: "weekly"

@@ -1,0 +1,90 @@
+{
+  "Results": [
+    {
+      "Target": "pom.xml",
+      "Type": "pom",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2026-49844",
+          "PkgName": "org.apache.logging.log4j:log4j-api",
+          "InstalledVersion": "2.25.4",
+          "Severity": "MEDIUM",
+          "Title": "org.apache.logging.log4j/log4j-api: Apache Log4j API: Malformed JSON output due to improper encoding of floating-point values",
+          "FixedVersion": "2.25.5, 2.26.1"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-65182",
+          "PkgName": "org.apache.tomcat.embed:tomcat-embed-core",
+          "InstalledVersion": "11.0.22",
+          "Severity": "CRITICAL",
+          "Title": "tomcat: Apache Tomcat: Security constraint bypass due to improper access control",
+          "FixedVersion": "11.0.25, 10.1.58, 9.0.121"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-65905",
+          "PkgName": "org.apache.tomcat.embed:tomcat-embed-core",
+          "InstalledVersion": "11.0.22",
+          "Severity": "CRITICAL",
+          "Title": "tomcat: Apache Tomcat: Authentication bypass via limited replay attack in DIGEST authenticator",
+          "FixedVersion": "11.0.25, 10.1.58, 9.0.121"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-68525",
+          "PkgName": "org.apache.tomcat.embed:tomcat-embed-core",
+          "InstalledVersion": "11.0.22",
+          "Severity": "CRITICAL",
+          "Title": "tomcat: Apache Tomcat: Unauthorized resource access via FORM authentication bypass",
+          "FixedVersion": "11.0.25, 10.1.58, 9.0.121"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-54291",
+          "PkgName": "org.postgresql:postgresql",
+          "InstalledVersion": "42.7.11",
+          "Severity": "HIGH",
+          "Title": "org.postgresql/postgresql: com.ongres.scram/scram-client: pgjdbc: Man-in-the-middle protection bypass via SCRAM-SHA-256-PLUS downgrade",
+          "FixedVersion": "42.7.12"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-68497",
+          "PkgName": "tools.jackson.core:jackson-databind",
+          "InstalledVersion": "3.1.4",
+          "Severity": "HIGH",
+          "Title": "com.fasterxml.jackson.core/jackson-databind: tools.jackson.core/jackson-databind: jackson-databind: CPU Denial of Service via unbounded numeric parsing",
+          "FixedVersion": "3.2.2, 3.1.6"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-19032",
+          "PkgName": "tools.jackson.core:jackson-databind",
+          "InstalledVersion": "3.1.4",
+          "Severity": "MEDIUM",
+          "Title": "com.fasterxml.jackson.core/jackson-databind: tools.jackson.core/jackson-databind: Jackson-databind: Uncontrolled URI scheme resolution in Path deserialization",
+          "FixedVersion": "3.1.6, 3.2.2"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-59889",
+          "PkgName": "tools.jackson.core:jackson-databind",
+          "InstalledVersion": "3.1.4",
+          "Severity": "MEDIUM",
+          "Title": "com.fasterxml.jackson.core/jackson-databind: Jackson-databind: Privilege escalation via improper handling of @JsonUnwrapped properties",
+          "FixedVersion": "3.1.5, 3.2.1"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-77310",
+          "PkgName": "tools.jackson.core:jackson-databind",
+          "InstalledVersion": "3.1.4",
+          "Severity": "MEDIUM",
+          "Title": "com.fasterxml.jackson.core/jackson-databind: jackson-databind: Server-Side Request Forgery and internal host enumeration via eager DNS resolution",
+          "FixedVersion": "3.1.5, 3.2.1"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-83557",
+          "PkgName": "tools.jackson.core:jackson-databind",
+          "InstalledVersion": "3.1.4",
+          "Severity": "MEDIUM",
+          "Title": "com.fasterxml.jackson.core/jackson-databind: tools.jackson.core/jackson-databind: jackson-databind: Path traversal via incomplete type validation",
+          "FixedVersion": "3.1.6, 3.2.2"
+        }
+      ]
+    }
+  ]
+}
